@@ -1,0 +1,20 @@
+---
+# tasks file for Install AWSSDK for Python
+    -
+      name: "pip is at the latest version"
+      yum:
+        name: "{{ packages }}"
+        state: latest
+      vars:
+       packages:
+        - python-pip
+    -
+      name: Make sure boto3 & botocore at the latest version
+      become: true # needed if the other tasks are not played as root
+      pip:
+       name: "{{ packages }}"
+       state: latest
+      vars:
+       packages:
+        - boto3
+        - botocore

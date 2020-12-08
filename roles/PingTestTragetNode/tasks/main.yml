@@ -1,0 +1,6 @@
+---
+# tasks Ping Test to Target/Remote Node
+    - 
+      name: Ping Test to Remote System
+      ping:
+       data: crash

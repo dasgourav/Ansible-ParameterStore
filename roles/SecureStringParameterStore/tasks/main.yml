@@ -1,0 +1,15 @@
+---
+# tasks Retrieve Private Key Temporarily from AWS SSM Parameter Store in the Ansible Controller Node, SSH to Remote Target and execute the playbooks.
+    - name: Remove file if Private PEM key exists (delete file)
+      file:     
+       path: ~/key.pem
+       state: absent
+    - name: Touch a Temporary file and set the permissions (equivalent to 600)
+      file:     
+       path: ~/key.pem
+       state: touch
+       mode: '600'
+    - name: Insert the Private Key Retrieved from SSM Parameter Store
+      lineinfile:   
+       path: ~/key.pem
+       line: "{{ lookup('aws_ssm', 'ssh-key-secured', region='us-east-1' ) }}"

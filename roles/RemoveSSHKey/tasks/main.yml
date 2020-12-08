@@ -1,0 +1,6 @@
+---
+# tasks Remove the Private Key from the Ansible Controller Node
+    - name: Remove Private key permanently
+      file:     
+       path: ~/key.pem
+       state: absent

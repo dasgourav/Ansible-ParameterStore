@@ -1,0 +1,26 @@
+---
+-
+  name: "Install Boto3 & BotoCore in the localhost or Ansible Controller Node"
+  hosts: localhost
+  roles:
+   - InstallAWSSDKforPython
+-
+  name: "Retrieve Private Key Temporarily from AWS SSM Parameter Store in the Ansible Controller Node, SSH to Remote Target and execute the playbooks"
+  hosts: localhost
+  roles:
+   - SecureStringParameterStore
+-
+  name: "Ping Test to Target/Remote Node"
+  become: true
+  remote_user: ec2-user
+  ignore_errors: yes
+  hosts: TargetNode
+  roles:
+   - PingTestTragetNode
+-
+  name: "Remove the Private Key from the Ansible Controller Node"
+  hosts: localhost
+  roles:
+   - RemoveSSHKey
+      
+   
