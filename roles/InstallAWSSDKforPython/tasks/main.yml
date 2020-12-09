@@ -9,7 +9,7 @@
        packages:
         - python-pip
     -
-      name: Make sure boto3 & botocore at the latest version
+      name: boto3 & botocore at the latest version
       become: true # needed if the other tasks are not played as root
       pip:
        name: "{{ packages }}"
