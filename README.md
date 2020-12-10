@@ -13,6 +13,5 @@ The Role **SecureStringParameterStore** is doing the magic here it is calling th
 In the Following Role, (SecureStringParameterStore) , you need to Update the Right Region where you have stored the Cloudformation & SSM Parameter Store, to retrieve the Secure String from the SSM Parameter Store. Here we have used us-east-1 which denotes N.Virginia Region. (Click here to check the AWS Region Code).
 
 ## Scope for improvement :
-1) We can directly store Server Login Credentials in the Systems Manager Parameter Store and retrieve the Credentials only during a Full Ansible run. Similarly, we did in the Role SecureStringParameterStore, without exposing/storing the credentials inside the Ansible Controller Node.
-2) For Error-Handling, we can use [Ansible rescue blocks] (https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html) so that if any Task fails the Retrieved private Key removed safely from the Ansible Controller Node.
-
+1) We can directly store Server Login Credentials in the Systems Manager Parameter Store and retrieve the Credentials only during a Full Ansible Run. Similarly, we did in the Role SecureStringParameterStore, without exposing/storing the credentials in the Ansible Controller Node.
+2) For Error-Handling, we can use [Ansible rescue blocks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html) so that if any Task fails the Retrieved private Key removed safely from the Ansible Controller Node.
