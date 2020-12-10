@@ -1,3 +1,2 @@
 # Variable file for TargetNode
 ansible_ssh_private_key_file: ~/key.pem
-ansible_host: 10.10.10.201

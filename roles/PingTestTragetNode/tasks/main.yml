@@ -3,4 +3,3 @@
     - 
       name: Ping Test to Remote System
       ping:
-       data: crash
