@@ -3,7 +3,7 @@
 The following Ansible Project is part of a Tutorial which contains all the necessary steps to achieve the objective, including how to run the Playbook.
 
 ## Objective:
-The goal here is to do a basic Infra Setup in the AWS with a Pre-configured Ansible Controller Node and a Remote Node. The Ansible Controller will fetch the remote instance, Private Key, from SSM Store Parameter and use it to connect to the Target Node and execute the Ansible Playbook. Don't worry, in the Tutorial, all required steps automated through Cloudformation Template. Thus, Non-AWS users won't find it difficult & easy to grasp.
+The goal here is to do a basic Infra Setup in the AWS with a Pre-configured Ansible Controller Node and a Remote Node. The Ansible Controller will fetch the remote instance, Private Key, from SSM Store Parameter and use it to connect to the Target Node and execute the Ansible Playbook. Don't worry, in the Tutorial, all required steps automated through Cloudformation Template. Thus, Non-AWS users won't find it difficult & easy to grasp. [Click Here](https://hackernoon.com/connect-to-ec2-remote-systems-from-the-ansible-control-machine-using-aws-ssm-parameter-store-jt2k342k), to go through the Step-by-Step Tutorial. 
 
 ## How Does it Work:
 Ansible controller machine that runs on an EC2 instance should use an IAM role, the role supplies temporary permissions that Ansible controller machine can use when they make calls to AWS SSM Parameter store to retrieve the Secure String without using Password-based authentication mechanism. When we launch an EC2 instance, we specify an IAM role to associate with the instance. Applications that run on the instance can then use the role-supplied temporary credentials to sign API requests.
